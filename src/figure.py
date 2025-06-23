@@ -14,11 +14,11 @@ class Figure(ABC):
 
     def add_area(self, figure):
         if not isinstance(figure, Figure):
-            raise ValueError(f"Argument figure must be type of Figure. Got {figure.__class__}")
+            raise ValueError(f"Expected Figure, got {figure.__class__.__name__}")
         return self.area + figure.area
 
     @staticmethod
     def validate_side(*sides):
         for side in sides:
             if side <= 0:
-                raise ValueError(f"Argument side must be greater than 0. Got side={side}, sides={sides}")
+                raise ValueError(f"Side must be > 0. Got side={side}, sides={sides}")
