@@ -1,10 +1,10 @@
 from math import sqrt
 
-from figure import Figure
+from src.figure import Figure
 
 
 class Triangle(Figure):
-    def __init__(self, side_a: int, side_b: int, side_c: int):
+    def __init__(self, side_a, side_b, side_c):
         super().validate_side(side_a, side_b, side_c)
         if (
             side_a + side_b <= side_c or
