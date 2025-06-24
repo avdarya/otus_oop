@@ -1,10 +1,9 @@
 import math
-
-from figure import Figure
+from src.figure import Figure
 
 
 class Circle(Figure):
-    def __init__(self, radius: int):
+    def __init__(self, radius):
         super().validate_side(radius)
         self.radius = radius
 
