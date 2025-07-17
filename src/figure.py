@@ -20,5 +20,7 @@ class Figure(ABC):
     @staticmethod
     def validate_side(*sides):
         for side in sides:
+            if not isinstance(side, int | float):
+                raise TypeError(f"Expected int or float. Got {type(side).__name__}")
             if side <= 0:
                 raise ValueError(f"Side must be > 0. Got side={side}, sides={sides}")
